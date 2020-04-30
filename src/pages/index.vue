@@ -147,7 +147,7 @@ class IndexPage extends Mixins(PageView) {
 
   reload () {
     this.setAppbar({
-      title: '#mornin.fm',
+      title: '#Mornin.fm',
       back: false
     })
   }
