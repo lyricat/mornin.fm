@@ -51,7 +51,7 @@ const config: Configuration = {
       'nuxt-i18n',
       {
         vueI18n: i18n,
-        locales: ['en', 'zh'],
+        locales: ['en', 'zh', 'zh-TW', 'ja', 'es-ES'],
         defaultLocale: 'en',
         strategy: 'no_prefix',
         detectBrowserLanguage: false,
