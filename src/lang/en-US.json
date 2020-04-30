@@ -1,0 +1,30 @@
+{
+  "hello": "Hello",
+
+  "com.room_card.join_btn": "Join",
+
+  "index": {
+    "create_room_dialog_title": "Create or join a room",
+    "create_room_dialog_hint_1": "<span class='domain'>https://mornin.fm/#/</span><span class='font-weight-bold'>ROOM-ID</span> indicate an audio conferencing at <span class='font-weight-bold'>ROOM-ID</span>",
+    "create_room_dialog_hint_2": "<span class='font-weight-bold'>ROOM-ID</span> could be alphabets or numbers, a simple word is good for a public room, a random string is good for private room.",
+    "create_room_dialog_btn": "Join",
+    "create_room_btn": "Create a Room",
+    "recent_room_label": "Recent rooms",
+    "headline_1": "Mornin.fm is an anonymous audio conferencing service",
+    "headline_2": "Talk with your friends without installing App"
+  },
+
+  "room": {
+    "empty_block_title": "Hey, you are lonely.",
+    "empty_block_text": " 🎉 share the page with friends and waiting for them to join 🎉",
+    "error_block_title": "Mornin.fm needs Microphone Permission",
+    "error_block_text": " 🎤Mornin.fm needs Microphone Permission to work properly, please allow it to use your microphone.🎤",
+    "name_dialog_title": "Your name",
+    "name_dialog_placeholder": "What's your nickname",
+    "name_dialog_btn": "Okay, I am ready"
+  },
+
+  "errorcode.-1": "NETWORK ERROR",
+  "errorcode.404": "CANNOT FIND RESOURCE",
+  "errorcode.fallback": "NETWORK ERROR"
+}

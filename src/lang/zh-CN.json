@@ -1,0 +1,30 @@
+{
+  "hello": "你好",
+
+  "com.room_card.join_btn": "加入房间",
+
+  "index": {
+    "create_room_dialog_title": "创建或加入房间",
+    "create_room_dialog_hint_1": "房间 #<span class='font-weight-bold'>ROOM-ID</span> 的访问地址是 <span class='domain'>https://mornin.fm/#/</span><span class='font-weight-bold'>ROOM-ID</span>。",
+    "create_room_dialog_hint_2": "房间名 #<span class='font-weight-bold'>ROOM-ID</span> 可以是数字和字母。公开房间可以用简单的单词作为名字，私有的房间可以用随机的单词作为名字。",
+    "create_room_dialog_btn": "加入",
+    "create_room_btn": "创建自己的房间",
+    "recent_room_label": "最近访问",
+    "headline_1": "Mornin.fm 是一个匿名语音群聊服务",
+    "headline_2": "跟你的朋友自在地聊天，无需下载 App 和注册用户"
+  },
+
+  "room": {
+    "empty_block_title": "啊，你形单影只",
+    "empty_block_text": " 🎉 把这个网页分享给你的朋友，让他们来一起聊天吧 🎉",
+    "error_block_title": "Mornin.fm 需要麦克风权限",
+    "error_block_text": " 🎤Mornin.fm 需要麦克风权限，请允许浏览器使用你的麦克风 🎤",
+    "name_dialog_title": "你的昵称",
+    "name_dialog_placeholder": "输入你的昵称",
+    "name_dialog_btn": "马上加入"
+  },
+
+  "errorcode.-1": "网络错误",
+  "errorcode.404": "资源不存在",
+  "errorcode.fallback": "网络错误"
+}
