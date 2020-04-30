@@ -83,21 +83,6 @@
         {{ this.isAllMuted ? $icons.mdiMicrophoneOff : $icons.mdiMicrophone }}
       </v-icon>
     </v-btn>
-    <v-btn
-      color="black"
-      dark
-      small
-      absolute
-      bottom
-      left
-      fab
-      class="mute-all-btn"
-      @click="test"
-    >
-      <v-icon>
-        {{ $icons.mdiMicrophone }}
-      </v-icon>
-    </v-btn>
   </normal-page-layout>
 </template>
 
