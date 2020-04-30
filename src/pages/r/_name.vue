@@ -83,6 +83,21 @@
         {{ this.isAllMuted ? $icons.mdiMicrophoneOff : $icons.mdiMicrophone }}
       </v-icon>
     </v-btn>
+    <v-btn
+      color="black"
+      dark
+      small
+      absolute
+      bottom
+      left
+      fab
+      class="mute-all-btn"
+      @click="test"
+    >
+      <v-icon>
+        {{ $icons.mdiMicrophone }}
+      </v-icon>
+    </v-btn>
   </normal-page-layout>
 </template>
 
@@ -188,7 +203,7 @@ class RoomPage extends Mixins(PageView) {
     setTimeout(() => {
       this.reload()
       if (this.nickname) {
-        launch(this.roomName, this.nickname, this.uid, this.onConnect, this.onDisconnect, this.onError)
+        launch(this.roomName, this.nickname, this.uid, this.onConnect, this.onDisconnect, this.onResume, this.onError)
       }
     }, 100)
   }
@@ -221,7 +236,7 @@ class RoomPage extends Mixins(PageView) {
       window.location.reload()
       return
     }
-    launch(this.roomName, this.nickname, this.uid, this.onConnect, this.onDisconnect, this.onError)
+    launch(this.roomName, this.nickname, this.uid, this.onConnect, this.onDisconnect, this.onResume, this.onError)
   }
 
   onConnect (stream:any, analyser:any, trackId:string, targetUid:string, targetNickname:string) {
@@ -253,6 +268,24 @@ class RoomPage extends Mixins(PageView) {
     } else {
       console.log(err)
     }
+  }
+
+  onResume (err:any) {
+    console.log('resume from connection', err)
+    this.clearup()
+  }
+
+  clearup () {
+    this.participants.splice(0, this.participants.length)
+    this.participantTrackIdMap = {}
+    this.participantMap = {}
+    this.streams = {}
+  }
+
+  test () {
+    console.log(this.participantTrackIdMap)
+    console.log(this.participantMap)
+    console.log(this.participants)
   }
 
   findParticipant (uid) {

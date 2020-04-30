@@ -27,20 +27,22 @@ let unameRPC = ''
 let onConnect = (stream:any, analyser:any, trackId:string, uid:string, nickname:string) => {}
 let onDisconnect = (trackId:string) => {}
 let onError = (err:any) => {}
+let onResume = (err:any) => {}
 
-export function launch(room, _nickname, _uid, _onConnect, _onDisconnect, _onError) {
+export function launch (room, _nickname, _uid, _onConnect, _onDisconnect, _onResume, _onError) {
   const uname = _uid + ':' + Base64.encode(_nickname)
   rnameRPC = encodeURIComponent(room)
   unameRPC = encodeURIComponent(uname)
   uid = _uid
   onConnect = _onConnect
   onDisconnect = _onDisconnect
+  onResume = _onResume
   onError = _onError
   nickname = _nickname
   start()
 }
 
-async function rpc(method, params) {
+async function rpc (method, params) {
   try {
     const response = await fetch('https://rpc.kraken.fm', {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
@@ -52,27 +54,33 @@ async function rpc(method, params) {
       },
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *client
-      body: JSON.stringify({id: uuidv4(), method: method, params: params}) // body data type must match "Content-Type" header
+      body: JSON.stringify({ id: uuidv4(), method: method, params: params }) // body data type must match "Content-Type" header
     })
-    return response.json(); // parses JSON response into native JavaScript objects
+    return response.json() // parses JSON response into native JavaScript objects
   } catch (err) {
     console.log('fetch error', method, params, err)
-    // return await rpc(method, params)
+    return await rpc(method, params)
   } finally {
   }
 }
 
-async function subscribe(pc:any) {
-  var res = await rpc('subscribe', [rnameRPC, unameRPC, ucid])
+async function subscribe (pc:any) {
+  const res = await rpc('subscribe', [rnameRPC, unameRPC, ucid])
   if (res.error && typeof res.error === 'string' && res.error.indexOf(unameRPC + ' not found in')) {
-    pc.close()
-    await start()
+    console.log('reconnect', res.error)
+    if (onResume) {
+      onResume(res.error)
+    }
+    setTimeout(async () => {
+      pc.close()
+      await start()
+    }, 500)
     return
   }
   if (res.data && res.data.type === 'offer') {
-    console.log("subscribe offer", res.data)
+    console.log('subscribe offer', res.data)
     await pc.setRemoteDescription(res.data)
-    var sdp = await pc.createAnswer()
+    const sdp = await pc.createAnswer()
     await pc.setLocalDescription(sdp)
     await rpc('answer', [rnameRPC, unameRPC, ucid, JSON.stringify(sdp)])
   }
@@ -81,24 +89,28 @@ async function subscribe(pc:any) {
   }, 3000)
 }
 
-export async function start() {
+export async function start () {
   try {
     document.querySelectorAll('.peer').forEach((el) => el.remove())
 
-    var pc = new RTCPeerConnection(configuration)
-    pc.createDataChannel('useless'); // FIXME remove this line
+    const pc = new RTCPeerConnection(configuration)
+    pc.createDataChannel('useless') // FIXME remove this line
 
-    pc.onicecandidate = ({candidate}) => {
+    pc.onicecandidate = ({ candidate }) => {
       rpc('trickle', [rnameRPC, unameRPC, ucid, JSON.stringify(candidate)])
     }
 
     pc.ontrack = (event) => {
-      console.log("ontrack", event)
+      console.log('ontrack', event)
 
-      var stream = event.streams[0]
-      var sid = decodeURIComponent(stream.id)
-      var id = sid.split(':')[0]
-      var name = Base64.decode(sid.split(':')[1])
+      const stream = event.streams[0]
+      const sid = decodeURIComponent(stream.id)
+      const id = sid.split(':')[0]
+      // console.log('sid', sid)
+      let name = sid.split(':')[1]
+      try {
+        name = Base64.decode(name)
+      } catch (err) {}
       // console.log(stream, id, name)
 
       if (id === uid) {
@@ -108,7 +120,7 @@ export async function start() {
       event.track.onmute = (event) => {
         if (onDisconnect) {
           const trackId:string = (event as any).target.id as string
-          console.log("onmute", trackId, event)
+          console.log('onmute', trackId, event)
           onDisconnect(trackId)
         }
       }
