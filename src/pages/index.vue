@@ -4,20 +4,43 @@
       <f-loading :loading="loading" :fullscreen="true" />
       <template>
         <div class="intro pa-4">
-          <p class="title">{{ $t('index.headline_1') }}</p>
-          <p class="body-2">{{ $t('index.headline_2') }}</p>
-          <p class="py-5">
+          <p class="display-1 font-weight-bold">{{ $t('index.headline_1') }}</p>
+          <p class="title font-weight-normal">{{ $t('index.headline_2') }}</p>
+          <div class="d-flex py-5 start-field-wrapper">
+            <v-text-field
+              prefix="#"
+              label="Room Name"
+              class="room-field"
+              solo
+              v-model="channelName"
+              :hide-details="true"
+            >
+              <template v-slot:append>
+                <v-btn icon @click="genRandomChannelName">
+                  <v-icon>
+                    {{ $icons.mdiDice3 }}
+                  </v-icon>
+                </v-btn>
+              </template>
+            </v-text-field>
             <v-btn
+              large
+              class="start-btn"
               color="primary"
               rounded
-              @click="showJoinDialog = true"
+              :disabled="!validated"
+              @click="createOrJoin"
             >
               {{ $t('index.create_room_btn') }}
             </v-btn>
-          </p>
+          </div>
+          <div class="hint">
+            <p class="caption" v-html="$t('index.create_room_dialog_hint_1')"></p>
+            <p class="caption" v-html="$t('index.create_room_dialog_hint_2')"></p>
+          </div>
         </div>
         <template v-if="!noRecentRooms">
-          <v-subheader class="caption ml-2">{{ $t('index.recent_room_label') }}</v-subheader>
+          <v-subheader class="body-2 ml-2">{{ $t('index.recent_room_label') }}</v-subheader>
           <div class="rooms">
             <div
               v-for="room in recentRooms"
@@ -116,15 +139,15 @@ class IndexPage extends Mixins(PageView) {
   channelName:string = ''
 
   get title () {
-    return 'Mornin.fm'
+    return 'Mornin'
   }
 
   get cardWidth () {
     const winWidth = window.innerWidth
-    if (winWidth < 400) {
+    if (winWidth < 600) {
       return `${winWidth - 12 - 8 * 2}px`
     }
-    return '200px'
+    return '240px'
   }
 
   get recentRooms () {
@@ -147,7 +170,9 @@ class IndexPage extends Mixins(PageView) {
 
   reload () {
     this.setAppbar({
-      title: '#Mornin.fm',
+      color: 'rgba(0,0,0,0.0)',
+      title: '#Mornin',
+      animation: true,
       back: false
     })
   }
@@ -174,7 +199,23 @@ export default IndexPage
 
 <style lang="scss" scoped>
 .intro {
+  margin-top: 40px;
+  .start-field-wrapper {
+    align-items: center;
+    margin-top: 40px;
+    max-width: 600px;
+    ::v-deep .v-input__append-inner {
+      margin-top: 2px;
+    }
+    .room-field {
+      margin-right: 16px;
+    }
+    .start-btn {
+      width: 180px;
+    }
+  }
 }
+
 .hint {
   color: rgba(255, 255, 255, 0.7);
   p {
@@ -190,6 +231,24 @@ export default IndexPage
   flex-direction: row;
   flex-wrap: wrap;
   .room-card-wrapper {
+  }
+}
+
+@media only screen and (max-width: 736px) {
+  .start-field-wrapper {
+    width: 100%;
+    align-items: flex-start !important;
+    justify-content: flex-start;
+    flex-direction: column;
+    ::v-deep .v-input__append-inner {
+      margin-top: 2px;
+    }
+    .room-field {
+      width: 100%;
+    }
+    .start-btn {
+      margin-top: 14px;
+    }
   }
 }
 </style>

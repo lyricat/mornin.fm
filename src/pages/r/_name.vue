@@ -164,7 +164,7 @@ class RoomPage extends Mixins(PageView) {
 
   get cardWidth () {
     const winWidth = window.innerWidth
-    if (winWidth < 400) {
+    if (winWidth < 460) {
       const cw = Math.round((winWidth - 12 * 2 - 8 * 4) / 2)
       return `${cw}px`
     }
@@ -207,6 +207,7 @@ class RoomPage extends Mixins(PageView) {
 
     this.roomName = rname
     this.setAppbar({
+      color: 'rgba(0, 0, 0, 0.0)',
       home: true,
       back: false,
       title: `#${this.roomName}`

@@ -120,5 +120,8 @@ export default NormalPageLayout
   display: flex;
   flex-direction: column;
   padding-top: 48px;
+  background-size: cover;
+  z-index: 2;
 }
+
 </style>

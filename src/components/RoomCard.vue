@@ -53,7 +53,7 @@ export default FLoading
 .room-card {
   border-radius: 20px;
   width: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.6);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   .delete-button {
@@ -65,9 +65,9 @@ export default FLoading
   .top {
     text-align: center;
     justify-content: space-between;
-    top: 0;
-    left: 0;
-    right: 0;
+    .nickname {
+      text-align: left;
+    }
   }
 }
 </style>

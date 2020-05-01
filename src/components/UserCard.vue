@@ -125,7 +125,7 @@ export default FLoading
 .user-card {
   border-radius: 20px;
   width: 100%;
-  background: #000;
+  background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
   .top {

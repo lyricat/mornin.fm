@@ -7,7 +7,7 @@ const constraints = {
 }
 const configuration:any = {
   iceServers: [{
-    urls: 'turn:34.85.105.240:443',
+    urls: 'turn:35.235.85.40:443',
     username: 'webrtc',
     credential: 'turnpassword'
   }],
