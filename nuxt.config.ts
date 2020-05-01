@@ -10,7 +10,7 @@ const config: Configuration = {
   srcDir: './src',
   head: {
     titleTemplate: '%s',
-    title: '',
+    title: 'Mornin',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no' },
@@ -18,26 +18,20 @@ const config: Configuration = {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
-      },
-      {
-        hid: 'mobile-web-app-capable',
-        name: 'mobile-web-app-capable',
-        content: 'yes'
-      },
-      {
-        hid: 'apple-mobile-web-app-capable',
-        name: 'apple-mobile-web-app-capable',
-        content: 'yes'
-      },
-      {
-        hid: 'application-name',
-        name: 'application-name',
-        content: 'Mornin'
-      },
-      {
-        hid: 'apple-application-name',
-        name: 'apple-application-name',
-        content: 'Mornin'
+      }, {
+        hid: 'mobile-web-app-capable', name: 'mobile-web-app-capable', content: 'yes'
+      }, {
+        hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes'
+      }, {
+        hid: 'application-name', name: 'application-name', content: 'Mornin'
+      }, {
+        hid: 'apple-application-name', name: 'apple-application-name', content: 'Mornin'
+      }, {
+        hid: 'apple-mobile-web-app-title', name: 'apple-mobile-web-app-title', content: 'Mornin'
+      }, {
+        hid: 'og:title', name: 'og:title', content: 'Mornin'
+      }, {
+        hid: 'og:site_name', name: 'og:site_name', content: 'Mornin'
       }
     ],
     link: [
