@@ -10,15 +10,15 @@
     "create_room_dialog_btn": "参加する",
     "create_room_btn": "ルームを作成します",
     "recent_room_label": "最近のルーム",
-    "headline_1": "Mornin.fm は匿名の音声グループチャットサービスです",
+    "headline_1": "Mornin は匿名の音声グループチャットサービスです",
     "headline_2": "アプリをダウンロードしたりユーザーを登録したりせずに、友達と自由にチャット"
   },
 
   "room": {
     "empty_block_title": "ああ、あなたはただ一つの影です",
     "empty_block_text": " 🎉 このページを友達と共有して、一緒にチャットさせましょう 🎉",
-    "error_block_title": "Mornin.fm にはマイクの許可が必要です",
-    "error_block_text": " 🎤Mornin.fm にはマイクの許可が必要です。ブラウザにマイクの使用を許可してください 🎤",
+    "error_block_title": "Mornin にはマイクの許可が必要です",
+    "error_block_text": " 🎤Mornin にはマイクの許可が必要です。ブラウザにマイクの使用を許可してください 🎤",
     "name_dialog_title": "あなたのニックネーム",
     "name_dialog_placeholder": "ニックネームを入力してください",
     "name_dialog_btn": "参加する"

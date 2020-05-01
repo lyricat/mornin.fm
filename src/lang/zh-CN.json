@@ -10,15 +10,15 @@
     "create_room_dialog_btn": "加入",
     "create_room_btn": "创建自己的房间",
     "recent_room_label": "最近访问",
-    "headline_1": "Mornin.fm 是一个匿名语音群聊服务",
+    "headline_1": "Mornin 是一个匿名语音群聊服务",
     "headline_2": "跟你的朋友自在地聊天，无需下载 App 和注册用户"
   },
 
   "room": {
     "empty_block_title": "啊，你形单影只",
     "empty_block_text": " 🎉 把这个网页分享给你的朋友，让他们来一起聊天吧 🎉",
-    "error_block_title": "Mornin.fm 需要麦克风权限",
-    "error_block_text": " 🎤Mornin.fm 需要麦克风权限，请允许浏览器使用你的麦克风 🎤",
+    "error_block_title": "Mornin 需要麦克风权限",
+    "error_block_text": " 🎤Mornin 需要麦克风权限，请允许浏览器使用你的麦克风 🎤",
     "name_dialog_title": "你的昵称",
     "name_dialog_placeholder": "输入你的昵称",
     "name_dialog_btn": "马上加入"

@@ -88,3 +88,4 @@ sw.*
 
 # Mac OSX
 .DS_Store
+workers-site

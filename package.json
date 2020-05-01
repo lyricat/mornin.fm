@@ -1,7 +1,7 @@
 {
   "name": "mornin-fm",
   "version": "1.0.0",
-  "description": "Mornin.fm is an anonymous audio conferencing service",
+  "description": "Mornin is an anonymous audio conferencing service",
   "author": "divisey",
   "private": true,
   "config": {

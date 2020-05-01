@@ -18,9 +18,32 @@ const config: Configuration = {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'mobile-web-app-capable',
+        name: 'mobile-web-app-capable',
+        content: 'yes'
+      },
+      {
+        hid: 'apple-mobile-web-app-capable',
+        name: 'apple-mobile-web-app-capable',
+        content: 'yes'
+      },
+      {
+        hid: 'application-name',
+        name: 'application-name',
+        content: 'Mornin'
+      },
+      {
+        hid: 'apple-application-name',
+        name: 'apple-application-name',
+        content: 'Mornin'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'apple-touch-icon', type: 'image/png', href: '/favicon.png' }
+    ]
   },
   loading: { color: '#fff' },
   css: ['~/styles/index.scss'],
@@ -43,9 +66,9 @@ const config: Configuration = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    ['@nuxtjs/google-analytics', {
-      id: 'UA-164787385-1'
-    }],
+    // ['@nuxtjs/google-analytics', {
+    //   id: 'UA-164787385-1'
+    // }],
     '@nuxtjs/dotenv',
     [
       'nuxt-i18n',
