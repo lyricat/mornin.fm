@@ -25,6 +25,27 @@
     "name_dialog_btn": "Okay, I am ready"
   },
 
+  "faq": {
+    "q1": "Q: Why did you guys build this?",
+    "a1": "Offline interactions are quick and easy; we built Mornin with no registration or login requirements, to try and replicate that feeling online.",
+    "q2": "Q: Does Mornin support video?",
+    "a2": "No. We always feel drained by videochat, and <a href=\"https://twitter.com/benthompson/status/1255648721309626369\">we’re not the only ones</a>. Until we have truly great VR, videochat is an uncomfortable “uncanny valley”—we feel much more relaxed in audio-only chat, and as an added bonus it’s much easier on mobile device’s battery life!",
+    "q3": "Q: What browsers do we support?",
+    "a3": "All modern browsers, including mobile! It may not work well when opened inside other apps (WeChat e.g.) so please open it in an actual browser.",
+    "q4": "Q: How many people can be in one room?",
+    "a4": "There’s no hard limit, but we’ve had rooms with over 100 people that still had great audio quality! Mornin works great for both small groups and big crowds. ",
+    "q5": "Q: What can I do with Mornin?",
+    "a5": "Our team uses it for online meetings, and for gaming together. Some more creative uses we’ve heard: online concert, ASMR experiences, live podcasts.",
+    "q6": "Q: How private are Mornin rooms?",
+    "a6": "The random URL means your room is highly unlikely to be found by anyone you don’t share the link with. The privacy of a Mornin room at the protocol level is roughly the same as other popular services (Zoom, Google etc.) We’re huge privacy advocates and would love to add end-to-end encryption, but haven’t found a solution that will work well in browsers for large groups. ",
+    "q7": "Q: Can you password-protect a Mornin room?",
+    "a7": "Not at the moment—only people you share a link with can find your Mornin room, but we’re exploring the idea of password protected rooms for the near future.",
+    "q8": "Q: What is Mornin made with?",
+    "a8": "Mornin is made with <a href=\"https://nuxtjs.org\"/>NUXT</a> and <a href=\"https://pion.ly/\">Pion</a>. Check out the <a href=\"https://github.com/fox-one/mornin.fm\">source code of the website</a>",
+    "q9": "Q: Who are you folks?",
+    "a9": "We’re the team behind <a href=\"https://mixin.one\">Mixin</a> (a decentralized crypto messenger) and <a href=\"https://fox.one\">Fox.ONE</a> (a decentralized exchange), and we’re huge proponents of privacy and freedom."
+  },
+
   "errorcode.-1": "NETWORK ERROR",
   "errorcode.404": "CANNOT FIND RESOURCE",
   "errorcode.fallback": "NETWORK ERROR"

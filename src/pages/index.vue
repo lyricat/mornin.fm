@@ -69,6 +69,8 @@
           <div class="anwser" v-html="item.a"></div>
         </div>
       </div>
+      <div class="footer">
+      </div>
     </v-container>
     <v-dialog
       v-model="showJoinDialog"
@@ -149,34 +151,7 @@ class IndexPage extends Mixins(PageView) {
 
   channelName:string = ''
 
-  faqItems = [{
-    q: 'Q: Why did you guys build this?',
-    a: 'Offline interactions are quick and easy; we built Mornin with no registration or login requirements, to try and replicate that feeling online.'
-  }, {
-    q: 'Q: Does Mornin support video?',
-    a: 'No. We always feel drained by videochat, and <a href="https://twitter.com/benthompson/status/1255648721309626369">we’re not the only ones</a>. Until we have truly great VR, videochat is an uncomfortable “uncanny valley”—we feel much more relaxed in audio-only chat, and as an added bonus it’s much easier on mobile device’s battery life!'
-  }, {
-    q: 'Q: What browsers do we support?',
-    a: 'All modern browsers, including mobile! It may not work well when opened inside other apps (WeChat e.g.) so please open it in an actual browser.'
-  }, {
-    q: 'Q: How many people can be in one room?',
-    a: 'There’s no hard limit, but we’ve had rooms with over 100 people that still had great audio quality! Mornin works great for both small groups and big crowds. '
-  }, {
-    q: 'Q: What can I do with Mornin?',
-    a: 'Our team uses it for online meetings, and for gaming together. Some more creative uses we’ve heard: online concert, ASMR experiences, live podcasts.'
-  }, {
-    q: 'Q: How private are Mornin rooms?',
-    a: 'The random URL means your room is highly unlikely to be found by anyone you don’t share the link with. The privacy of a Mornin room at the protocol level is roughly the same as other popular services (Zoom, Google etc.) We’re huge privacy advocates and would love to add end-to-end encryption, but haven’t found a solution that will work well in browsers for large groups. '
-  }, {
-    q: 'Q: Can you password-protect a Mornin room?',
-    a: 'Not at the moment—only people you share a link with can find your Mornin room, but we’re exploring the idea of password protected rooms for the near future.'
-  }, {
-    q: 'Q: What is Mornin made with?',
-    a: 'Mornin is made with <a href="https://nuxtjs.org"/>NUXT</a> and <a href="https://pion.ly/">Pion</a>. Check out the <a href="https://github.com/fox-one/mornin.fm">source code of the website</a>'
-  }, {
-    q: 'Q: Who are you folks?',
-    a: 'We’re the team behind <a href="https://mixin.one">Mixin</a> (a decentralized crypto messenger) and <a href="https://fox.one">Fox.ONE</a> (a decentralized exchange), and we’re huge proponents of privacy and freedom.'
-  }]
+  faqItems:any = []
 
   get title () {
     return 'Mornin'
@@ -203,6 +178,12 @@ class IndexPage extends Mixins(PageView) {
   }
 
   mounted () {
+    for (let ix = 0; ix < 9; ix++) {
+      this.faqItems.push({
+        q: this.$i18n.t(`faq.q${ix + 1}`),
+        a: this.$i18n.t(`faq.a${ix + 1}`)
+      })
+    }
     setTimeout(() => {
       this.reload()
     }, 100)
@@ -305,5 +286,9 @@ export default IndexPage
       margin: 4px 0;
     }
   }
+}
+
+.footer {
+  height: 100px;
 }
 </style>
