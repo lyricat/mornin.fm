@@ -11,7 +11,7 @@
         </div>
         <div v-else class="hint-box caption px-4 py-2 mx-2 mb-4">
           <v-icon small>{{ $icons.mdiHeadphones }}</v-icon>
-          Use an earbud or earphone or headphone to improve quality and avoid echoes.
+          {{ $t('room.earhub_block_text') }}
         </div>
         <div v-if="noMicPermission" class="hint-box error-hint px-4 py-2 mx-2 mb-4">
           <h2 class="body-1 font-weight-bold">{{ $t('room.error_block_title') }}</h2>

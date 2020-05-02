@@ -16,6 +16,7 @@
   },
 
   "room": {
+    "earhub_block_text": "Use an earbud or earphone or headphone to improve quality and avoid echoes.",
     "empty_block_title": "Looks lonely in here...",
     "empty_block_text": "🎉 share this link with friends and they can instantly join up! 🎉",
     "error_block_title": "Mornin needs Microphone Permission",

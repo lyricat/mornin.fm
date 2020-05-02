@@ -16,6 +16,7 @@
   },
 
   "room": {
+    "earhub_block_text": "戴上耳机可以有效提升音质，还能去掉回音。",
     "empty_block_title": "啊，你形单影只",
     "empty_block_text": " 🎉 把这个网页分享给你的朋友，让他们来一起聊天吧 🎉",
     "error_block_title": "Mornin 需要麦克风权限",
