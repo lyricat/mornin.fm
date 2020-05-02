@@ -5,7 +5,7 @@
 
   "index": {
     "create_room_dialog_title": "参加する",
-    "create_room_dialog_hint_1": "チャットルーム #<span class='font-weight-bold'>ROOM-ID</span> のアドレスは <span class='domain'>https://mornin.fm/#/</span><span class='font-weight-bold'>ROOM-ID</span> です。",
+    "create_room_dialog_hint_1": "チャットルーム #<span class='font-weight-bold'>ROOM-ID</span> のアドレスは <span class='domain'>https://mornin.fm/</span><span class='font-weight-bold'>ROOM-ID</span> です。",
     "create_room_dialog_hint_2": "ルーム名 #<span class='font-weight-bold'>ROOM-ID</span> 公開されたサービスは、名前の文字として使用することができます。また、既存の名前の文字は、名前の文字として使用することができます。",
     "create_room_dialog_btn": "参加する",
     "create_room_btn": "ルームを作成します",

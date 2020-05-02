@@ -4,19 +4,20 @@
   "com.room_card.join_btn": "Join",
 
   "index": {
-    "create_room_dialog_title": "Create or join a room",
-    "create_room_dialog_hint_1": "<span class='domain'>https://mornin.fm/#/</span><span class='font-weight-bold'>ROOM-ID</span> indicate an audio conferencing at <span class='font-weight-bold'>ROOM-ID</span>",
-    "create_room_dialog_hint_2": "<span class='font-weight-bold'>ROOM-ID</span> could be alphabets or numbers, a simple word is good for a public room, a random string is good for private room.",
+    "faq_title": "FAQ",
+    "create_room_dialog_title": "Join a Room",
+    "create_room_dialog_hint_1": "You can choose a simple word <span class='font-weight-bold'>ROOM-NAME</span> for a public room, or hit the Dice icon for a random string that will only be findable by people who you share a link with!",
+    "create_room_dialog_hint_2": "",
     "create_room_dialog_btn": "Join",
-    "create_room_btn": "Create a Room",
+    "create_room_btn": "Join a Room",
     "recent_room_label": "Recent rooms",
-    "headline_1": "Mornin is an anonymous audio conferencing service",
-    "headline_2": "Talk with your friends without installing App"
+    "headline_1": "Mornin is an instant audio conferencing service",
+    "headline_2": "Talk with your friends, no need to install an app or register!"
   },
 
   "room": {
-    "empty_block_title": "Hey, you are lonely.",
-    "empty_block_text": " 🎉 share the page with friends and waiting for them to join 🎉",
+    "empty_block_title": "Looks lonely in here...",
+    "empty_block_text": "🎉 share this link with friends and they can instantly join up! 🎉",
     "error_block_title": "Mornin needs Microphone Permission",
     "error_block_text": " 🎤Mornin needs Microphone Permission to work properly, please allow it to use your microphone.🎤",
     "name_dialog_title": "Your name",
