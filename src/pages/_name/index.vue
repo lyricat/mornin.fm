@@ -9,6 +9,10 @@
             {{ $t('room.empty_block_text') }}
           </div>
         </div>
+        <div v-else class="hint-box caption px-4 py-2 mx-2 mb-4">
+          <v-icon small>{{ $icons.mdiHeadphones }}</v-icon>
+          Use an earbud or earphone or headphone to improve quality and avoid echoes.
+        </div>
         <div v-if="noMicPermission" class="hint-box error-hint px-4 py-2 mx-2 mb-4">
           <h2 class="body-1 font-weight-bold">{{ $t('room.error_block_title') }}</h2>
           <div class="body-2">
@@ -69,7 +73,7 @@
       </v-card>
     </v-dialog>
     <v-btn
-      color="black"
+      color="rgba(255, 255, 255, 0.2)"
       dark
       small
       absolute
@@ -165,7 +169,7 @@ class RoomPage extends Mixins(PageView) {
   get cardWidth () {
     const winWidth = window.innerWidth
     if (winWidth < 460) {
-      const cw = Math.round((winWidth - 12 * 2 - 8 * 4) / 2)
+      const cw = Math.round((winWidth - 12 * 2 - 10 * 4) / 2)
       return `${cw}px`
     }
     return '200px'
@@ -376,7 +380,8 @@ export default RoomPage
 .mute-all-btn {
   bottom: 0;
   position: absolute;
-  margin: 0 16px 48px 0;
+  margin: 0 16px 68px 0;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
 }
 .cards {
   display: flex;
@@ -386,7 +391,9 @@ export default RoomPage
   }
 }
 .hint-box {
+  color: rgba(255, 255, 255, 0.7);
   border-radius: 20px;
+  background: linear-gradient(-15deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.1) 100%);
   &.empty-hint {
     background: linear-gradient(-15deg, rgb(153, 0, 255) 0%, #0057fa 100%) !important;
   }
