@@ -22,6 +22,7 @@
       <v-btn
         text
         block
+        rounded
         color="primary"
         @click="$emit('join', room)"
       >
@@ -53,8 +54,8 @@ export default FLoading
 .room-card {
   border-radius: 20px;
   width: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
   position: relative;
   .delete-button {
     position: absolute;

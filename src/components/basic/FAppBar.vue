@@ -1,13 +1,12 @@
 <template>
   <v-app-bar
     v-if="show"
-    app
-    fixed
     flat
     height="48"
     :dark="dark"
     :color="color"
     :style="style"
+    class="appbar"
   >
     <v-btn
       v-if="hasBack"
@@ -79,3 +78,9 @@ class FAppBar extends Vue {
 }
 export default FAppBar
 </script>
+
+<style lang="scss" scoped>
+.appbar {
+  flex: 0;
+}
+</style>

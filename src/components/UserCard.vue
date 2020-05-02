@@ -128,12 +128,16 @@ export default FLoading
   background: rgba(0, 0, 0, 0.3);
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   position: relative;
+  overflow: hidden;
   .top {
     justify-content: space-between;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
+    .nickname {
+      word-break: break-all;
+    }
   }
   .canvas-wrapper {
     height: 100px;

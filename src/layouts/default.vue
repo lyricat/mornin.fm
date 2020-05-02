@@ -2,7 +2,7 @@
   <v-app class="app">
     <nuxt />
     <toast />
-    <ul class="bg-bubbles" :class="useBgAnimation ? '' : 'pause'">
+    <ul v-if="useBgAnimation" class="bg-bubbles" :class="useBgAnimation ? '' : 'pause'">
       <li></li>
       <li></li>
       <li></li>
@@ -78,6 +78,8 @@ export default DefaultLayout
     background-color: rgba(255, 255, 255, 0.05);
     bottom: -160px;
 
+    animation-duration: 133s;
+
     -webkit-animation: square 25s infinite;
     animation:         square 25s infinite;
 
@@ -92,7 +94,7 @@ export default DefaultLayout
       width: 80px;
       height: 80px;
       animation-delay: -20s;
-      animation-duration: 27s;
+      animation-duration: 97s;
     }
     &:nth-child(3){
       left: 25%;
@@ -102,7 +104,7 @@ export default DefaultLayout
       left: 40%;
       width: 60px;
       height: 60px;
-      animation-duration: 62s;
+      animation-duration: 102s;
       animation-delay: -20s;
       background-color: rgba(255, 255, 255, 0.15);
     }
@@ -128,14 +130,14 @@ export default DefaultLayout
       width: 20px;
       height: 20px;
       animation-delay: -65s;
-      animation-duration: 120s;
+      animation-duration: 140s;
     }
     &:nth-child(9){
       left: 25%;
       width: 10px;
       height: 10px;
       animation-delay: -2s;
-      animation-duration: 80s;
+      animation-duration: 180s;
       background-color: rgba(255, 255, 255, 0.12);
     }
     &:nth-child(10){
@@ -148,10 +150,10 @@ export default DefaultLayout
 }
 @-webkit-keyframes square {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-1000px) rotate(600deg); }
+  100% { transform: translateY(-2000px) rotate(600deg); }
 }
 @keyframes square {
   0%   { transform: translateY(0); }
-  100% { transform: translateY(-1000px) rotate(600deg); }
+  100% { transform: translateY(-2000px) rotate(600deg); }
 }
 </style>

@@ -119,7 +119,6 @@ export default NormalPageLayout
   height: 100%;
   display: flex;
   flex-direction: column;
-  padding-top: 48px;
   background-size: cover;
   z-index: 2;
 }
