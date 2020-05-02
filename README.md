@@ -1,6 +1,6 @@
-# nuxt-ts-template
+# Mornin
 
-> My cat&#39;s meow Nuxt.js project
+source code of https://mornin.fm
 
 ## Build Setup
 
@@ -18,5 +18,3 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
-
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).

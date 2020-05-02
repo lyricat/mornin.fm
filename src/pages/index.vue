@@ -171,6 +171,9 @@ class IndexPage extends Mixins(PageView) {
     q: 'Q: Can you password-protect a Mornin room?',
     a: 'Not at the moment—only people you share a link with can find your Mornin room, but we’re exploring the idea of password protected rooms for the near future.'
   }, {
+    q: 'Q: What is Mornin made with?',
+    a: 'Mornin is made with <a href="https://nuxtjs.org/>NUXT</a> and <a href="https://pion.ly/">Pion</a>. Check out the <a href="https://github.com/fox-one/mornin.fm">source code of the website</a>'
+  }, {
     q: 'Q: Who are you folks?',
     a: 'We’re the team behind <a href="https://mixin.one">Mixin</a> (a decentralized crypto messenger) and <a href="https://fox.one">Fox.ONE</a> (a decentralized exchange), and we’re huge proponents of privacy and freedom.'
   }]
