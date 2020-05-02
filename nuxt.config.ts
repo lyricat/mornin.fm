@@ -21,7 +21,7 @@ const config: Configuration = {
       }, {
         hid: 'mobile-web-app-capable', name: 'mobile-web-app-capable', content: 'yes'
       }, {
-        hid: 'theme-color', name: 'theme-color', content: '#040c11'
+        hid: 'theme-color', name: 'theme-color', content: '#040C11'
       }, {
         hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes'
       }, {

@@ -11,7 +11,7 @@ import { reloadMixinTheme } from '@/utils/helper'
         {
           hid: 'theme-color',
           name: 'theme-color',
-          content: '#111'
+          content: '#040C11'
         }
       ]
     }

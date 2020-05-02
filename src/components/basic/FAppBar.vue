@@ -82,5 +82,6 @@ export default FAppBar
 <style lang="scss" scoped>
 .appbar {
   flex: 0;
+  background: linear-gradient(to bottom, #040c11 0%, #040c1100 100%) !important;
 }
 </style>
