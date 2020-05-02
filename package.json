@@ -1,8 +1,8 @@
 {
-  "name": "mornin-fm",
+  "name": "mornin",
   "version": "1.0.0",
   "description": "Mornin is an anonymous audio conferencing service",
-  "author": "divisey",
+  "author": "Mornin",
   "private": true,
   "config": {
     "nuxt": {

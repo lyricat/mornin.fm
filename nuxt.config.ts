@@ -5,7 +5,7 @@ import { isProduct, GA } from './src/constants'
 const config: Configuration = {
   mode: 'spa',
   router: {
-    mode: 'hash'
+    mode: 'history'
   },
   srcDir: './src',
   head: {
@@ -20,6 +20,8 @@ const config: Configuration = {
         content: process.env.npm_package_description || ''
       }, {
         hid: 'mobile-web-app-capable', name: 'mobile-web-app-capable', content: 'yes'
+      }, {
+        hid: 'theme-color', name: 'theme-color', content: '#040c11'
       }, {
         hid: 'apple-mobile-web-app-capable', name: 'apple-mobile-web-app-capable', content: 'yes'
       }, {
@@ -60,9 +62,6 @@ const config: Configuration = {
   modules: [
     '@nuxtjs/pwa',
     '@nuxtjs/axios',
-    // ['@nuxtjs/google-analytics', {
-    //   id: 'UA-164787385-1'
-    // }],
     '@nuxtjs/dotenv',
     [
       'nuxt-i18n',
@@ -97,6 +96,7 @@ const config: Configuration = {
   },
   env: {
     TOKEN: process.env.TOKEN || '',
+    API_BASE: process.env.API_BASE || '',
     APP_ENV: process.env.APP_ENV || ''
   }
 }
