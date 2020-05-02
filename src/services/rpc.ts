@@ -1,3 +1,4 @@
+import { API_BASE } from '@/constants'
 import { uuidv4 } from '@/utils/uuid'
 import { Base64 } from 'js-base64'
 
@@ -43,8 +44,9 @@ export function launch (room, _nickname, _uid, _onConnect, _onDisconnect, _onRes
 }
 
 async function rpc (method, params) {
+  const rpcUrl = API_BASE
   try {
-    const response = await fetch('https://rpc.kraken.fm', {
+    const response = await fetch(rpcUrl, {
       method: 'POST', // *GET, POST, PUT, DELETE, etc.
       mode: 'cors', // no-cors, *cors, same-origin
       cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
@@ -94,7 +96,15 @@ export async function start () {
     document.querySelectorAll('.peer').forEach((el) => el.remove())
 
     const pc = new RTCPeerConnection(configuration)
-    pc.createDataChannel('useless') // FIXME remove this line
+    pc.createDataChannel('chat') // FIXME remove this line
+
+    // chatChannel.onopen = (event) => {
+    //   chatChannel.send('Hi you!')
+    // }
+
+    // chatChannel.onmessage = (event) => {
+    //   chatChannel.send(event.data)
+    // }
 
     pc.onicecandidate = ({ candidate }) => {
       rpc('trickle', [rnameRPC, unameRPC, ucid, JSON.stringify(candidate)])

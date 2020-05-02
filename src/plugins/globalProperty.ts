@@ -8,6 +8,7 @@ import {
   mdiRefresh,
   mdiDice3,
   mdiHome,
+  mdiHeadphones,
   mdiArrowLeft
 } from '@mdi/js'
 import * as utils from '@/utils'
@@ -22,6 +23,7 @@ Vue.prototype.$icons = {
   mdiRefresh,
   mdiDice3,
   mdiHome,
+  mdiHeadphones,
   mdiArrowLeft
 }
 
