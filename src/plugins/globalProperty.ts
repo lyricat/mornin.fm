@@ -12,7 +12,6 @@ import {
   mdiArrowLeft
 } from '@mdi/js'
 import * as utils from '@/utils'
-import api from '@/services/api'
 
 Vue.prototype.$icons = {
   mdiMicrophone,
@@ -29,4 +28,3 @@ Vue.prototype.$icons = {
 
 Vue.prototype.$utils = utils
 
-Vue.prototype.$api = api
