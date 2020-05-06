@@ -81,11 +81,12 @@ async function rpc (method, params) {
 async function subscribe (pc:any) {
   const res = await rpc('subscribe', [rnameRPC, unameRPC, ucid])
   if (res.error && typeof res.error === 'string' && res.error.indexOf(unameRPC + ' not found in')) {
-    console.log('reconnect', res.error)
+    console.log('try to reconnect', res.error)
     if (onResume) {
       const prom:any = onResume(res.error)
       prom.then(() => {
         if (running) {
+          console.log('reconnect in 0.5s')
           setTimeout(async () => {
             pc.close()
             await start()
@@ -154,14 +155,13 @@ export async function start () {
         }
       }
 
-      let analyser = audioCtx.createAnalyser();
+      const analyser = audioCtx.createAnalyser();
       analyser.fftSize = 256;
       analyser.minDecibels = -80;
       analyser.maxDecibels = -10;
       analyser.smoothingTimeConstant = 0.85;
-      audioCtx.createMediaStreamSource(stream).connect(analyser)
-      // enable audio playing for people except me
-      // analyser.connect(audioCtx.destination)
+      const source = audioCtx.createMediaStreamSource(stream)
+      source.connect(analyser)
 
       if (onConnect) {
         const trackId:string = (event as any).track.id as string
@@ -169,7 +169,7 @@ export async function start () {
       }
     }
 
-    var stream
+    let stream
     try {
       stream = await navigator.mediaDevices.getUserMedia(constraints)
     } catch (err) {
@@ -180,12 +180,20 @@ export async function start () {
       }
       return
     }
-    let analyser = audioCtx.createAnalyser();
-    analyser.fftSize = 256;
-    analyser.minDecibels = -80;
-    analyser.maxDecibels = -10;
-    analyser.smoothingTimeConstant = 0.85;
-    audioCtx.createMediaStreamSource(stream).connect(analyser)
+    const analyser = audioCtx.createAnalyser()
+    analyser.fftSize = 256
+    analyser.minDecibels = -80
+    analyser.maxDecibels = -10
+    analyser.smoothingTimeConstant = 0.85
+    const source = audioCtx.createMediaStreamSource(stream)
+    const gainNode = audioCtx.createGain()
+    // Reduce micphone's volume to 0.01 (not 0)
+    // or safari will give non-sense data in getFloatFrequencyData() and getByteTimeDomainData()
+    // after switch mornin's tab to background
+    gainNode.gain.value = 0.01
+    source.connect(analyser)
+    analyser.connect(gainNode)
+    gainNode.connect(audioCtx.destination)
 
     if (onConnect) {
       onConnect(pc, stream, analyser, 'me', uid, nickname)

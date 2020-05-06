@@ -62,6 +62,7 @@ class FLoading extends Vue {
     const canvasCtx = canvas.getContext('2d')
     const bufferLength = analyser.frequencyBinCount
     const dataArray = new Float32Array(bufferLength)
+    // const dataArray = new Uint8Array(bufferLength)
     const gb = uuidToColor(id)
     const g = gb[0]
     const b = gb[1]
@@ -72,7 +73,8 @@ class FLoading extends Vue {
       const HEIGHT = canvas.height
 
       analyser.getFloatFrequencyData(dataArray)
-
+      // analyser.getByteTimeDomainData(dataArray)
+      // console.log(dataArray[0])
       canvasCtx.fillStyle = 'rgb(0, 0, 0)'
       canvasCtx.fillRect(0, 0, WIDTH, HEIGHT)
 
