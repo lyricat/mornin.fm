@@ -1,7 +1,10 @@
 <template>
   <div class="normal-page-layout">
     <slot name="app-bar">
-      <f-app-bar dark>
+      <f-app-bar
+        dark
+        @go-home="goHome"
+      >
         <v-btn
           small
           icon
@@ -101,6 +104,11 @@ class NormalPageLayout extends Vue {
 
   openProfile () {
     this.showProfileDialog = true
+  }
+
+  goHome () {
+    console.log('normal layout go home')
+    this.$emit('home')
   }
 }
 export default NormalPageLayout

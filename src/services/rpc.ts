@@ -25,10 +25,13 @@ let uid = ''
 let nickname = ''
 let rnameRPC = ''
 let unameRPC = ''
-let onConnect = (stream:any, analyser:any, trackId:string, uid:string, nickname:string) => {}
+let onConnect = (pc:any, stream:any, analyser:any, trackId:string, uid:string, nickname:string) => {}
 let onDisconnect = (trackId:string) => {}
 let onError = (err:any) => {}
 let onResume = (err:any) => {}
+
+let pc:any = null
+let running:boolean = false
 
 export function launch (room, _nickname, _uid, _onConnect, _onDisconnect, _onResume, _onError) {
   const uname = _uid + ':' + Base64.encode(_nickname)
@@ -40,7 +43,16 @@ export function launch (room, _nickname, _uid, _onConnect, _onDisconnect, _onRes
   onResume = _onResume
   onError = _onError
   nickname = _nickname
+  running = true
   start()
+}
+
+export function stop () {
+  if (pc) {
+    pc.close()
+  }
+  running = false
+  console.log('stop: ' + running)
 }
 
 async function rpc (method, params) {
@@ -71,12 +83,16 @@ async function subscribe (pc:any) {
   if (res.error && typeof res.error === 'string' && res.error.indexOf(unameRPC + ' not found in')) {
     console.log('reconnect', res.error)
     if (onResume) {
-      onResume(res.error)
+      const prom:any = onResume(res.error)
+      prom.then(() => {
+        if (running) {
+          setTimeout(async () => {
+            pc.close()
+            await start()
+          }, 500)
+        }
+      })
     }
-    setTimeout(async () => {
-      pc.close()
-      await start()
-    }, 500)
     return
   }
   if (res.data && res.data.type === 'offer') {
@@ -92,10 +108,13 @@ async function subscribe (pc:any) {
 }
 
 export async function start () {
+  if (!running) {
+    return
+  }
   try {
     document.querySelectorAll('.peer').forEach((el) => el.remove())
 
-    const pc = new RTCPeerConnection(configuration)
+    pc = new RTCPeerConnection(configuration)
     pc.createDataChannel('chat') // FIXME remove this line
 
     // chatChannel.onopen = (event) => {
@@ -146,7 +165,7 @@ export async function start () {
 
       if (onConnect) {
         const trackId:string = (event as any).track.id as string
-        onConnect(stream, analyser, trackId, id, name)
+        onConnect(pc, stream, analyser, trackId, id, name)
       }
     }
 
@@ -169,7 +188,7 @@ export async function start () {
     audioCtx.createMediaStreamSource(stream).connect(analyser)
 
     if (onConnect) {
-      onConnect(stream, analyser, 'me', uid, nickname)
+      onConnect(pc, stream, analyser, 'me', uid, nickname)
     }
 
     audioCtx.resume()

@@ -73,7 +73,8 @@ class FAppBar extends Vue {
   }
 
   handleHome () {
-    this.$router.replace('/')
+    this.$emit('go-home')
+    this.$router.push('/')
   }
 }
 export default FAppBar
