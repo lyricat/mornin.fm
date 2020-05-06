@@ -76,47 +76,6 @@
         </div>
       </div>
     </v-container>
-    <v-dialog
-      v-model="showJoinDialog"
-      max-width="290"
-    >
-      <v-card>
-        <v-card-title class="title-2">{{ $t('index.create_room_dialog_title') }}</v-card-title>
-        <v-card-text class="mb-0 pb-2">
-          <div class="mb-4">
-            <v-text-field
-              prefix="#"
-              label="Room Name"
-              v-model="channelName"
-              :hide-details="true"
-            >
-              <template v-slot:append>
-                <v-btn icon @click="genRandomChannelName">
-                  <v-icon>
-                    {{ $icons.mdiDice3 }}
-                  </v-icon>
-                </v-btn>
-              </template>
-            </v-text-field>
-          </div>
-          <div class="hint">
-            <p class="caption" v-html="$t('index.create_room_dialog_hint_1')"></p>
-            <p class="caption" v-html="$t('index.create_room_dialog_hint_2')"></p>
-          </div>
-        </v-card-text>
-        <v-card-actions class="px-5 pb-5">
-          <v-btn
-            color="primary"
-            block
-            rounded
-            :disabled="!validated"
-            @click="createOrJoin"
-          >
-            {{ $t('index.create_room_dialog_btn') }}
-          </v-btn>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
   </normal-page-layout>
 </template>
 
@@ -178,7 +137,7 @@ class IndexPage extends Mixins(PageView) {
   }
 
   get validated () {
-    return this.channelName.trim().length !== 0 && /[a-zA-Z0-9_\\-]+/.test(this.channelName)
+    return this.channelName.trim().length !== 0 && /^[a-zA-Z0-9\-_]+$/.test(this.channelName)
   }
 
   mounted () {
@@ -203,8 +162,8 @@ class IndexPage extends Mixins(PageView) {
   }
 
   genRandomChannelName () {
-    const name: string = uniqueNamesGenerator(randomNameConfig)
-    this.channelName = encodeURI(name.toLowerCase().replace(/ /g, '-'))
+    const name:string = uniqueNamesGenerator(randomNameConfig)
+    this.channelName = name.toLowerCase().replace(/[^a-zA-Z0-9\-_]/g, '')
   }
 
   deleteRoom (room) {
