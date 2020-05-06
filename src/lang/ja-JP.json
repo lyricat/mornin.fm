@@ -4,19 +4,20 @@
   "com.room_card.join_btn": "参加する",
 
   "index": {
+    "faq_title": "FAQ",
     "create_room_dialog_title": "参加する",
     "create_room_dialog_hint_1": "チャットルーム #<span class='font-weight-bold'>ROOM-ID</span> のアドレスは <span class='domain'>https://mornin.fm/</span><span class='font-weight-bold'>ROOM-ID</span> です。",
-    "create_room_dialog_hint_2": "ルーム名 #<span class='font-weight-bold'>ROOM-ID</span> 公開されたサービスは、名前の文字として使用することができます。また、既存の名前の文字は、名前の文字として使用することができます。",
+    "create_room_dialog_hint_2": "ルームID #<span class='font-weight-bold'>ROOM-ID</span> 　ルームIDとして使えるのは英数字のみです。このルームIDを知っている人は誰でもルームに入ることができます。",
     "create_room_dialog_btn": "参加する",
-    "create_room_btn": "ルームを作成します",
+    "create_room_btn": "ルームを作成する",
     "recent_room_label": "最近のルーム",
     "headline_1": "Mornin は匿名の音声グループチャットサービスです",
-    "headline_2": "アプリをダウンロードしたりユーザーを登録したりせずに、友達と自由にチャット"
+    "headline_2": "アプリのダウンロードも、ユーザー登録もいりません。友達と自由にチャットしよう！"
   },
 
   "room": {
-    "empty_block_title": "ああ、あなたはただ一つの影です",
-    "empty_block_text": " 🎉 このページを友達と共有して、一緒にチャットさせましょう 🎉",
+    "empty_block_title": "誰もいないようです...",
+    "empty_block_text": " 🎉 このページを友達と共有して、一緒にチャットしよう 🎉",
     "error_block_title": "Mornin にはマイクの許可が必要です",
     "error_block_text": " 🎤Mornin にはマイクの許可が必要です。ブラウザにマイクの使用を許可してください 🎤",
     "name_dialog_title": "あなたのニックネーム",
