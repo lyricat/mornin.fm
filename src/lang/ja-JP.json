@@ -1,6 +1,8 @@
 {
   "hello": "こんにちは",
 
+  "common.copy_url": "Copy Room URL",
+
   "com.room_card.join_btn": "参加する",
 
   "index": {

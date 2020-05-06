@@ -70,6 +70,10 @@
         </div>
       </div>
       <div class="footer">
+        <div class="twitter">
+          © Mornin 2020<br>
+          Follow <a href="https://twitter.com/MorninFM">@MorninFM</a> to contact us.
+        </div>
       </div>
     </v-container>
     <v-dialog
@@ -289,6 +293,8 @@ export default IndexPage
 }
 
 .footer {
-  height: 100px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 60px;
+  padding: 16px;
 }
 </style>

@@ -1,6 +1,9 @@
 {
   "hello": "你好",
 
+  "common.copy_url": "复制房间地址",
+  "common.copy_succ_hint": "已复制房间地址到剪贴板，分享给你的朋友吧",
+
   "com.room_card.join_btn": "加入房间",
 
   "index": {

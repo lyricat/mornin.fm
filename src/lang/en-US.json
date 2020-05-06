@@ -1,6 +1,9 @@
 {
   "hello": "Hello",
 
+  "common.copy_url": "Copy Room URL",
+  "common.copy_succ_hint": "Copied to clipboard",
+
   "com.room_card.join_btn": "Join",
 
   "index": {

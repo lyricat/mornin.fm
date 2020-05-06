@@ -1,6 +1,8 @@
 {
   "hello": "Hello",
 
+  "common.copy_url": "Copy Room URL",
+
   "com.room_card.join_btn": "Unirse",
 
   "index": {

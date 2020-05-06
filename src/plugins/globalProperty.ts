@@ -28,3 +28,6 @@ Vue.prototype.$icons = {
 
 Vue.prototype.$utils = utils
 
+Vue.prototype.$toast = function (data: { message: string; color: string }) {
+  this.$store.commit('app/toast', data)
+}

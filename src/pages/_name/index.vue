@@ -1,5 +1,7 @@
 <template>
-  <normal-page-layout>
+  <normal-page-layout
+    @home="goHome"
+  >
     <v-container class="room-page">
       <f-loading :loading="loading" :fullscreen="true" />
       <template>
@@ -8,6 +10,16 @@
           <div class="body-2">
             {{ $t('room.empty_block_text') }}
           </div>
+          <v-btn
+            class="my-2"
+            small
+            outlined
+            v-clipboard:copy="destination"
+            v-clipboard:success="() => copyUtil.onCopy(this)"
+            v-clipboard:error="() => copyUtil.onError(this)"
+          >
+            {{ $t('common.copy_url') }}
+          </v-btn>
         </div>
         <div v-else class="hint-box caption px-4 py-2 mx-2 mb-4">
           <v-icon small>{{ $icons.mdiHeadphones }}</v-icon>
@@ -95,8 +107,9 @@ import { Component, Mixins } from 'vue-property-decorator'
 import { Mutation, State } from 'vuex-class'
 import { uniqueNamesGenerator, Config, adjectives, starWars } from 'unique-names-generator'
 import PageView from '@/mixins/page'
-import { launch } from '@/services/rpc'
+import { launch, stop } from '@/services/rpc'
 import { uuidv4 } from '@/utils/uuid'
+import copyUtil from '@/utils/copy'
 import UserCard from '@/components/UserCard.vue'
 
 const randomNameConfig: Config = {
@@ -153,6 +166,10 @@ class RoomPage extends Mixins(PageView) {
 
   streams = {}
 
+  pc:any = null
+
+  copyUtil = copyUtil
+
   get isAllMuted () {
     for (let ix = 0; ix < this.participants.length; ix++) {
       if (!this.participants[ix].isMuted) {
@@ -160,6 +177,11 @@ class RoomPage extends Mixins(PageView) {
       }
     }
     return true
+  }
+
+  get destination () {
+    const url = (window as any).location.href
+    return url
   }
 
   get validated () {
@@ -229,7 +251,8 @@ class RoomPage extends Mixins(PageView) {
     launch(this.roomName, this.nickname, this.uid, this.onConnect, this.onDisconnect, this.onResume, this.onError)
   }
 
-  onConnect (stream:any, analyser:any, trackId:string, targetUid:string, targetNickname:string) {
+  onConnect (pc:any, stream:any, analyser:any, trackId:string, targetUid:string, targetNickname:string) {
+    this.pc = pc
     console.log(stream, targetUid, targetNickname)
     this.addParticipant(stream, analyser, trackId, targetUid, targetNickname)
     this.streams[targetUid] = stream
@@ -261,15 +284,24 @@ class RoomPage extends Mixins(PageView) {
   }
 
   onResume (err:any) {
-    console.log('resume from connection', err)
-    this.clearup()
+    return new Promise((resolve) => {
+      console.log('resume from connection', err)
+      this.clearup()
+      resolve()
+    })
   }
 
   clearup () {
+    console.log('clear up')
     this.participants.splice(0, this.participants.length)
     this.participantTrackIdMap = {}
     this.participantMap = {}
     this.streams = {}
+  }
+
+  goHome () {
+    stop()
+    this.clearup()
   }
 
   test () {
