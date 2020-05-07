@@ -11,6 +11,8 @@ export default function ({ app }) {
     locale = 'es'
   } else if (browserLang.includes('ja')) {
     locale = 'ja'
+  } else if (browserLang.includes('de')) {
+    locale = 'de'
   }
   app.i18n.setLocale(locale)
 }

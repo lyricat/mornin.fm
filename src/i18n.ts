@@ -3,6 +3,7 @@ import zh from './lang/zh-CN.json'
 import zhTW from './lang/zh-TW.json'
 import ja from './lang/ja-JP.json'
 import es from './lang/es-ES.json'
+import de from './lang/de-DE.json'
 
 export default {
   fallbackLocale: 'en',
@@ -11,6 +12,7 @@ export default {
     zh,
     zhTW,
     ja,
-    es
+    es,
+    de
   }
 }

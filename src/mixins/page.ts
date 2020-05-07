@@ -67,6 +67,8 @@ export default class PageView extends Vue {
       locale = 'es'
     } else if (browserLang.includes('ja')) {
       locale = 'ja'
+    } else if (browserLang.includes('de')) {
+      locale = 'de'
     }
     this.$i18n.locale = locale
     document.title = this.title
