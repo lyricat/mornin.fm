@@ -13,17 +13,17 @@
     "create_room_dialog_hint_2": "",
     "create_room_dialog_btn": "Beitreten",
     "create_room_btn": "Trete einem Raum bei",
-    "recent_room_label": "Letzte Räume",
+    "recent_room_label": "Zuletzt besuchte Räume",
     "headline_1": "Mornin ist ein Instant Audiokonferenz Dienst",
-    "headline_2": "Sprich mit deinen Freunden ohne Installation oder Registration!"
+    "headline_2": "Unterhalte dich  mit deinen Freunden ohne Installation oder Registration!"
   },
 
   "room": {
-    "earhub_block_text": "Benutze Kopfhörer um die Tonqualität zu verbessern und Echo zu vermeiden.",
+    "earhub_block_text": "Benutze Kopfhörer um die Tonqualität zu verbessern und um Echos zu vermeiden.",
     "empty_block_title": "Du bist hier alleine...",
     "empty_block_text": "🎉 Teile diesen Link mit Freunden und diese können sofort beitreten! 🎉",
     "error_block_title": "Mornin benötigt die Erlaubnis das Mikrofon zu benutzen",
-    "error_block_text": " 🎤MDamit Mornin richtig funktioniert benötigt es die Erlaubnis, das Mikrofon zu bneutzen, erlaube bitte die Benutzng des Mikrofons.🎤",
+    "error_block_text": " 🎤MDamit Mornin richtig funktioniert benötigt es die Erlaubnis, das Mikrofon zu benutzen, erlaube bitte die Benutzung des Mikrofons.🎤",
     "name_dialog_title": "Dein Name",
     "name_dialog_placeholder": "Wie lautet dein Nickname",
     "name_dialog_btn": "Okay, ich bin bereit"
@@ -31,17 +31,17 @@
 
   "faq": {
     "q1": "Q: Warum habt ihr Morning entwickelt?",
-    "a1": "Offline Interaktionen sind schnell und unkompliziert; wir wollen dies auch in Mornin ermöglichen und haben daher auf Registreirung und Anmeldung verzichtet.",
-    "q2": "Q: Unterstützt Morning Video?",
-    "a2": "Nein,und wir finden Videochats sehr ermüdend und wir sind da nicht <a href=\"https://twitter.com/benthompson/status/1255648721309626369\">einzigen</a>. Bis es gute VR-Chats gibt, sind Videochats nicht die erste Wahl - wir fühlen uns im Audiochat wohler und sparen als Bonus noch Akku.",
+    "a1": "Offline Interaktionen sind schnell und unkompliziert; wir wollen dies auch in Mornin ermöglichen und haben daher auf Registrierung und Anmeldung verzichtet.",
+    "q2": "Q: Unterstützt Mornin Video?",
+    "a2": "Nein, wir finden Videochats sehr ermüdend und wir sind da nicht <a href=\"https://twitter.com/benthompson/status/1255648721309626369\">einzigen</a>. Bis es gute VR-Chats gibt, sind Videochats nicht unsere erste Wahl - wir fühlen uns im Audiochat wohler und sparen als Bonus noch Akku.",
     "q3": "Q: Welche Browser werden unterstützt?",
-      "a3": "Alle modernen Browser werden unterstützt, mobile Browser eingeschlossen! Es kann aber sein, dass es innerhalb bestimmter Apps (z.B. WeChat) nicht funktioniert. öffne Morning daher immer in einem richtigen Browser",
+      "a3": "Alle modernen Browser werden unterstützt, mobile Browser eingeschlossen! Es kann aber sein, dass es innerhalb bestimmter Apps (z.B. WeChat) nicht funktioniert. Öffne Morning daher immer in einem richtigen Browser",
     "q4": "Q: Wieviele können in einem Raum sein?",
-    "a4": "Es gibt keine Grenze, Wir hatten schon Räume mit über 100 Teilnehmern bei bester Tonqualität! Mornin funktioniert mit kleinen oder grossen Gruppen.",
+    "a4": "Es gibt keine Grenze. Wir hatten schon Räume mit über 100 Teilnehmern bei bester Tonqualität! Mornin funktioniert mit kleinen oder grossen Gruppen.",
     "q5": "Q: Was kann ich mit Mornin machen?",
-    "a5": "Ubser Team benutzt es für unsere Online-Meetings und um miteinander zu spielen. Wir haben aber auch schon von anderen kreativen Anwendungen wie  Onlinekonzerte oder Livepodcasts gehört.",
+    "a5": "Ubser Team benutzt es für unsere Online-Meetings oder um miteinander zu spielen. Wir haben aber auch schon von anderen kreativen Anwendungen wie Onlinekonzerte oder Livepodcasts gehört.",
     "q6": "Q: Wie privat sind Mornin-Räume?",
-    "a6": "Mit einem Zufallsname ist es zeinlich unwahrscheinlich, dass jemand unerwünscht deine Raum findet. Auf dem Protokolllevel ist Morning vergleichbar mit anderen populären Diensten (Zoom, Google etc.) Wir würden gerne eine Ende-zu-Ende Verschlüsselung einbauen, haben aber bis jetzt noch keine Lösung gefunden, welche auch mit grossen Gruupen auf allen Browsern funktioniert.",
+    "a6": "Mit einem Zufallsname ist es zeinlich unwahrscheinlich, dass jemand unerwünscht deinen Raum findet. Auf dem Protokolllevel ist Mornin vergleichbar mit anderen populären Diensten (Zoom, Google etc.) Wir würden gerne eine Ende-zu-Ende Verschlüsselung einbauen, haben aber bis jetzt noch keine Lösung gefunden, welche auch mit grossen Gruppen und auf allen Browsern gut funktioniert.",
     "q7": "Q: Kann ein Mornin-Raum mit einem Passwort geschützt werden?",
     "a7": "Im Moment noch nicht - jeder der den Link kennt kann beitreten, aber wir erforschen die Möglichkeit eines Passwortschutzen bereits.",
     "q8": "Q: Womit wurde Mornin gebaut?",
