@@ -31,6 +31,12 @@
             {{ $t('room.error_block_text') }}
           </div>
         </div>
+        <div v-if="isWeChat" class="hint-box error-hint px-4 py-2 mx-2 mb-4">
+          <h2 class="body-1 font-weight-bold">{{ $t('room.wechat_error_block_title') }}</h2>
+          <div class="body-2">
+            {{ $t('room.wechat_error_block_text') }}
+          </div>
+        </div>
         <div class="cards">
           <div
             v-for="user in participants"
@@ -177,6 +183,11 @@ class RoomPage extends Mixins(PageView) {
       }
     }
     return true
+  }
+
+  get isWeChat () {
+    // MicroMessenger
+    return navigator.userAgent.toLowerCase().includes('micromessenger')
   }
 
   get destination () {

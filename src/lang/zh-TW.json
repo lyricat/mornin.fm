@@ -21,6 +21,8 @@
     "empty_block_text": " 🎉 把這個網頁分享給你的朋友，讓他們來一起聊天吧  🎉",
     "error_block_title": "Mornin 需要麥克風權限",
     "error_block_text": " 🎤Mornin 需要麥克風權限，請允許瀏覽器使用你的麥克風 🎤",
+    "wechat_error_block_title": "Mornin 無法在微信中使用",
+    "wechat_error_block_text": "微信不支持 Mornin 使用的新技術，請在右上角瀏覽器中打開 Mornin。",
     "name_dialog_title": "你的暱稱",
     "name_dialog_placeholder": "輸入你的暱稱",
     "name_dialog_btn": "馬上加入"

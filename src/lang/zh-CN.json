@@ -24,6 +24,8 @@
     "empty_block_text": " 🎉 把这个网页分享给你的朋友，让他们来一起聊天吧 🎉",
     "error_block_title": "Mornin 需要麦克风权限",
     "error_block_text": " 🎤Mornin 需要麦克风权限，请允许浏览器使用你的麦克风 🎤",
+    "wechat_error_block_title": "Mornin 无法在微信中使用",
+    "wechat_error_block_text": "微信不支持 Mornin 使用的新技术，请在右上角浏览器中打开 Mornin",
     "name_dialog_title": "你的昵称",
     "name_dialog_placeholder": "输入你的昵称",
     "name_dialog_btn": "马上加入"

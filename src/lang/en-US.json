@@ -24,6 +24,8 @@
     "empty_block_text": "🎉 share this link with friends and they can instantly join up! 🎉",
     "error_block_title": "Mornin needs Microphone Permission",
     "error_block_text": " 🎤Mornin needs Microphone Permission to work properly, please allow it to use your microphone.🎤",
+    "wechat_error_block_title": "Mornin can't run in WeChat",
+    "wechat_error_block_text": "WeChat does not support the new technology used by Mornin, please visit Mornin in browser at top right corner.",
     "name_dialog_title": "Your name",
     "name_dialog_placeholder": "What's your nickname",
     "name_dialog_btn": "Okay, I am ready"
