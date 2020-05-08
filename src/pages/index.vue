@@ -195,7 +195,7 @@ export default IndexPage
       margin-right: 16px;
     }
     .start-btn {
-      width: 180px;
+      min-width: 180px;
     }
   }
 }
