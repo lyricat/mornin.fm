@@ -120,6 +120,7 @@ export async function start () {
     const servers:any = await rpc('turn', [uid])
     configuration.iceServers = servers.data
   } catch (err) {
+    console.log('failed to get server', err)
     configuration.iceServers = [ defaultIceServer ]
   }
   try {
@@ -149,9 +150,7 @@ export async function start () {
       // console.log('sid', sid)
       let name = sid.split(':')[1]
       try {
-        console.log(name)
         name = Base64.decode(name)
-        console.log(name)
       } catch (err) {
         console.log('failed to decode name', name, err)
       }
