@@ -1,17 +1,20 @@
 import { API_BASE } from '@/constants'
 import { uuidv4 } from '@/utils/uuid'
-import { Base64 } from 'js-base64'
+import Base64 from '@/utils/base64'
 
 const constraints = {
   audio: true,
   video: false
 }
+
+const defaultIceServer = {
+  urls: 'turn:35.235.85.40:443',
+  username: 'webrtc',
+  credential: 'turnpassword'
+}
+
 const configuration:any = {
-  iceServers: [{
-    urls: 'turn:35.235.85.40:443',
-    username: 'webrtc',
-    credential: 'turnpassword'
-  }],
+  iceServers: [],
   iceTransportPolicy: 'relay',
   bundlePolicy: 'max-bundle',
   rtcpMuxPolicy: 'require',
@@ -114,7 +117,13 @@ export async function start () {
     return
   }
   try {
-    document.querySelectorAll('.peer').forEach((el) => el.remove())
+    const servers:any = await rpc('turn', [uid])
+    configuration.iceServers = servers.data
+  } catch (err) {
+    configuration.iceServers = [ defaultIceServer ]
+  }
+  try {
+    document.querySelectorAll('.peer').forEach((el:any) => el.remove())
 
     pc = new RTCPeerConnection(configuration)
     pc.createDataChannel('chat') // FIXME remove this line
@@ -140,8 +149,12 @@ export async function start () {
       // console.log('sid', sid)
       let name = sid.split(':')[1]
       try {
+        console.log(name)
         name = Base64.decode(name)
-      } catch (err) {}
+        console.log(name)
+      } catch (err) {
+        console.log('failed to decode name', name, err)
+      }
       // console.log(stream, id, name)
 
       if (id === uid) {
