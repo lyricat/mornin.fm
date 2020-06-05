@@ -68,7 +68,7 @@ async function rpc (method, params) {
       },
       redirect: 'follow', // manual, *follow, error
       referrerPolicy: 'no-referrer', // no-referrer, *client
-      body: JSON.stringify({ id: uuidv4(), method: method, params: params }) // body data type must match "Content-Type" header
+      body: JSON.stringify({ id: uuidv4(), method, params }) // body data type must match "Content-Type" header
     })
     return response.json() // parses JSON response into native JavaScript objects
   } catch (err) {
@@ -80,8 +80,9 @@ async function rpc (method, params) {
 
 async function subscribe (pc:any) {
   const res = await rpc('subscribe', [rnameRPC, unameRPC, ucid])
-  if (res.error && typeof res.error === 'string' && res.error.indexOf(unameRPC + ' not found in')) {
-    console.log('try to reconnect', res.error)
+  // console.log('subscribe', res)
+  if (res.hasOwnProperty('error')) {
+    console.log('try to reconnect', res.error.description)
     if (onResume) {
       const prom:any = onResume(res.error)
       prom.then(() => {
@@ -206,7 +207,8 @@ export async function start () {
     })
     await pc.setLocalDescription(await pc.createOffer())
 
-    var res = await rpc('publish', [rnameRPC, unameRPC, JSON.stringify(pc.localDescription)])
+    const res = await rpc('publish', [rnameRPC, unameRPC, JSON.stringify(pc.localDescription)])
+    console.log(res)
     if (res.data && res.data.sdp.type === 'answer') {
       await pc.setRemoteDescription(res.data.sdp)
       ucid = res.data.track
