@@ -47,7 +47,7 @@
     "q7": "Q: Can you password-protect a Mornin room?",
     "a7": "Not at the moment—only people you share a link with can find your Mornin room, but we’re exploring the idea of password protected rooms for the near future.",
     "q8": "Q: What is Mornin made with?",
-    "a8": "Mornin is made with <a href=\"https://nuxtjs.org\"/>NUXT</a> and <a href=\"https://pion.ly/\">Pion</a>. Check out the <a href=\"https://github.com/fox-one/mornin.fm\">source code of the website</a>",
+    "a8": "Mornin is made with <a href=\"https://nuxtjs.org\"/>NUXT</a> and <a href=\"https://pion.ly/\">Pion</a>. Check out the source code of <a href=\"https://github.com/fox-one/mornin.fm\">the website</a> and <a href=\"https://github.com/mixinnetwork/kraken\">service</a>",
     "q9": "Q: Who are you folks?",
     "a9": "We’re the team behind <a href=\"https://mixin.one\">Mixin</a> (a decentralized crypto messenger) and <a href=\"https://fox.one\">Fox.ONE</a> (a decentralized exchange), and we’re huge proponents of privacy and freedom."
   },

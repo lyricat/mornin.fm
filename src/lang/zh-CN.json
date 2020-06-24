@@ -47,7 +47,7 @@
     "q7": "问：可以用密码保护 Mornin 的房间吗？",
     "a7": "目前还不是，只有与您共享链接的人才能找到您的 Mornin 房间，但是我们正在探索在不久的将来使用密码保护房间的想法。",
     "q8": "问：Mornin 是用什么制成的？",
-    "a8": "Mornin 由 <a href=\"https://nuxtjs.org\"/>NUXT</a> 和 <a href=\"https://pion.ly/\">Pion</a> 搭建而成，可以在这里查看<a href=\"https://github.com/fox-one/mornin.fm\">网站的源码</a>",
+    "a8": "Mornin 由 <a href=\"https://nuxtjs.org\"/>NUXT</a> 和 <a href=\"https://pion.ly/\">Pion</a> 搭建而成，可以在这里查看<a href=\"https://github.com/fox-one/mornin.fm\">网站</a>和<a href=\"https://github.com/mixinnetwork/kraken\">服务</a>的源码",
     "q9": "问：你们是谁？",
     "a9": "我们是两位来自 <a href=\"https://mixin.one\">Mixin</a>（隐私加密 IM 和加密货币网络）和 <a href=\"https://fox.one\">Fox.ONE</a> （去中心化交易引擎）团队的成员，我们是隐私和自由的坚定拥护者。"
   },
