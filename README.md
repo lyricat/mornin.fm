@@ -18,3 +18,16 @@ $ yarn start
 # generate static project
 $ yarn generate
 ```
+
+## Docker
+
+```bash
+# pull docker image
+docker pull viticis/mornin.fm
+
+# launch server
+docker run -itd --name mornin.fm viticis/mornin.fm
+
+# or build docker image yourself
+docker build -t mornin.fm .
+```
