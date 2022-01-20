@@ -116,6 +116,7 @@ class IndexPage extends Mixins(PageView) {
 
   faqItems:any = []
 
+  // @ts-ignore 
   get title () {
     return 'Mornin'
   }
