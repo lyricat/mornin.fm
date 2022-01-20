@@ -212,6 +212,7 @@ class RoomPage extends Mixins(PageView) {
     return this.participants.length === 1
   }
 
+  // @ts-ignore
   get title () {
     return `#${this.roomName}`
   }
@@ -295,7 +296,7 @@ class RoomPage extends Mixins(PageView) {
   }
 
   onResume (err:any) {
-    return new Promise((resolve) => {
+    return new Promise<void>((resolve) => {
       console.log('resume from connection', err)
       this.clearup()
       resolve()
